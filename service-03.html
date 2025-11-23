@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>騰紘科技</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link type="image/png" href="img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" />
+    <link type="image/png" href="img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" />
+    <link type="image/x-icon" href="img/favicon/favicon.ico" rel="icon" sizes="16x16" />
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/oz-tailwind.css" />
+    <link rel="stylesheet" href="css/oz-style.css" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- aos -->
+    <link rel="stylesheet" href="css/aos.css" />
+  </head>
+  <body>
+    <div id="preloader" class="preloader fixed z-50 left-0 top-0 right-0 bottom-0 bg-white flex justify-center items-center">
+      <div class="loader"></div>
+    </div>
+    <header class="w-full top-0 left-0 z-50 py-2 px-3 lg:px-15 bg-white lg:bg-transparent">
+      <div class="container mx-auto relative flex justify-between items-center w-full h-full" x-data="{ showMenu: false } ">
+        <a class="logo block text-center w-40" href="index.html"><img src="img/logo.png" alt="騰紘科技" /></a>
+
+        <!-- 下拉選單 -->
+        <div @click="showMenu = !showMenu" class="block text-white bg-th-green hover:brightness-90 cursor-pointer lg:hidden order-last rounded-sm">
+          <span class="flex items-center justify-center w-10 h-10 text-2xl"><i class="bi bi-list-ul"></i></span>
+        </div>
+
+        <!-- NavBar -->
+        <div class="justify-center items-start lg:items-center hidden w-full h-auto lg:relative lg:flex" :class="{'flex absolute z-50 left-0 top-[67px] bg-white/90 backdrop-blur-lg shadow-xl shadow-gray-500/20': showMenu, 'hidden': !showMenu }">
+          <nav class="flex flex-col justify-center lg:justify-end items-start lg:items-center w-full lg:flex-row justify-items-stretch sm:justity-center sm:items-center">
+            <ul class="nav w-full flex flex-wrap tracking-wider lg:justify-end lg:items-center lg:space-x-3 lg:p-0 px-4 pb-4">
+              <li class="relative lg:w-auto w-full">
+                <a href="index.html#aboutUs" class="block p-3 hover:text-th-green">公司簡介</a>
+              </li>
+              <li class="relative lg:w-auto w-full">
+                <a href="service.html" class="block p-3 hover:text-th-green">服務項目</a>
+              </li>
+              <li class="relative lg:w-auto w-full" @click.away="open = false" x-data="{ open: false }">
+                <a href="javascript:void(0)" @click="open = !open" class="block p-3 hover:text-th-green">
+                  <span>其他類別產業</span>
+                  <i class="bi bi-chevron-down inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 rotate-0" :class="{'rotate-180': open, 'rotate-0': !open}"></i>
+                </a>
+                <div class="lg:absolute relative lg:top-full lg:-left-12 w-full lg:mt-4 rounded lg:shadow-lg lg:w-65 z-20" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" style="display: none">
+                  <ul class="sub w-full p-2 bg-th-green text-white lg:rounded">
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-01.html"><i class="bi bi-dot"></i>電子資訊光電生物科技產業</a>
+                    </li>
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-02.html"><i class="bi bi-dot"></i> 醫療 / 照護服務產業</a>
+                    </li>
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-03.html"><i class="bi bi-dot"></i>太陽能發電 / LED照明產業</a>
+                    </li>
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-04.html"><i class="bi bi-dot"></i>公共工程</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="relative lg:w-auto w-full">
+                <a href="products.html" class="block p-3 hover:text-th-green">產品介紹</a>
+              </li>
+              <li class="relative lg:w-auto w-full">
+                <a href="contact.html" class="block p-3 hover:text-th-green">聯絡我們</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="w-full px-3 lg:px-15 bg-gray-800/50 bg-center bg-fixed bg-blend-multiply bg-no-repeat bg-cover" style="background-image: url(img/04.jpg)">
+        <div class="container mx-auto py-20 flex flex-wrap">
+          <div class="w-full flex flex-col items-center md:items-start justify-center mb-10" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000">
+            <p class="text-lg text-th-orange pb-2">Services Projects</p>
+            <h2 class="text-5xl text-white text-pretty pb-5">太陽能發電 / LED照明產業</h2>
+            <p class="text-base text-white text-pretty">騰紘科技具備廠房與辦公室工程整合經驗，專精於水電、消防、空調及監控系統的設計與施工。完成紡織、砂輪、五金、化工等多項產業建廠工程，兼顧品質、安全與效率。服務範圍涵蓋高低壓電力、自動控制、消防、太陽能、LED節能與空調系統，並提供教育訓練與完善售後服務。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full px-3 lg:px-15 relative">
+        <picture class="-z-1 absolute bottom-230 md:-bottom-50 -left-50 lg:-left-45">
+          <img class="w-100 md:w-190 h-auto opacity-30" src="img/gallery-2.svg" alt="" />
+        </picture>
+        <div class="container mx-auto pt-20 flex flex-wrap">
+          <div class="w-full lg:w-1/3 lg:pr-3 flex flex-col items-center md:items-start justify-center mb-10" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="1000">
+            <p class="text-lg text-th-orange pb-2">Business Scope</p>
+            <h2 class="text-5xl text-th-green text-pretty pb-5">業務範圍</h2>
+            <p class="text-base text-gray-500 text-pretty">太陽能發電/LED照明規劃、設計及建造。</p>
+          </div>
+          <ul class="w-full lg:w-2/3 lg:pl-3 grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
+            <li class="text-white flex group w-full" data-aos="flip-right" data-aos-delay="2000" data-aos-duration="1000">
+              <div class="flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <div class="w-full flex items-center pb-5">
+                  <span><i class="text-th-orange text-5xl pr-5 i fi-rr-corporate-alt group-hover:text-gray-800"></i></span>
+                  <span class="text-2xl">LED燈光系統工程</span>
+                </div>
+                <div class="w-full flex">
+                  <div class="w-1 bg-th-green group-hover:bg-gray-800"></div>
+                  <ul class="list-disc pl-8">
+                    <li>LED全彩景觀亮化系統規劃設計施工</li>
+                    <li>LED室內照明設備規劃設計施工</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="text-white flex group w-full" data-aos="flip-right" data-aos-delay="2200" data-aos-duration="1000">
+              <div class="flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <div class="w-full flex items-center pb-5">
+                  <span><i class="text-th-orange text-5xl pr-5 i fi-rr-corporate-alt group-hover:text-gray-800"></i></span>
+                  <span class="text-2xl">太陽能光電系統工程</span>
+                </div>
+                <div class="w-full flex">
+                  <div class="w-1 bg-th-green group-hover:bg-gray-800"></div>
+                  <ul class="list-disc pl-8">
+                    <li>能源局設置經費補助申請代辦</li>
+                    <li>太陽能發電系統設計規劃施工</li>
+                    <li>獨立型太陽能發電系統</li>
+                    <li>併聯型太陽能發電系統</li>
+                    <li>建築外觀一體化型太陽能發電系統</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="w-full bg-gray-100 py-20 px-3 lg:px-15 mt-10 md:mt-20">
+        <div class="relative container mx-auto flex flex-wrap">
+          <div class="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center mb-10" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+            <p class="text-lg text-th-orange pb-2">Engineering Achievements</p>
+            <h2 class="text-5xl text-th-green text-pretty pb-5">承攬工程實績</h2>
+            <p class="text-base text-gray-500 text-pretty">騰紘科技完成多項廠房與公共工程實績，以專業、安全與效率為核心，為客戶打造值得信賴的工程成果。</p>
+          </div>
+          <div class="swiper mySwiper mx-0 md:mx-auto">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-01.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">桃園縣永安漁港觀光跨港</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">人行陸橋</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-02.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">泰國曼谷市CIRCLE豪宅大樓</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">LED景觀照明系統工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-03.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">桃園縣龍潭觀光大池公園</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">LED燈光系統工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-04.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">屏東縣田子國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-05.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">屏東縣後庄國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-06.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">屏東縣振興國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-07.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">宜蘭縣政府五峰旗風景區</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-08.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">屏東縣大同高級中學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-09.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">南投縣愛國國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-10.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">桃園縣龍安國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-11.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">桃園縣錦興國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-12.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">屏東縣後庄國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img class="shadow-th" src="img/service/4-13.jpg" />
+                <div class="pt-2">
+                  <h3 class="text-lg pb-2 text-th-orange">屏東縣振興國民小學</h3>
+                  <ul class="list-disc pl-5">
+                    <li class="text-xs pb-1 text-gray-500">太陽光電發電系統設備工程</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <button id="scroll" class="cursor-pointer w-full mx-auto py-2 bg-gray-200 text-gray-800 hover:text-th-green"><i class="text-3xl font-black fi fi-rr-angle-up"></i></button>
+      <div class="w-full px-3 lg:px-15 bg-gray-800">
+        <div class="container mx-auto flex flex-wrap py-16">
+          <div class="w-full mx-auto lg:w-1/3 lg:pr-5 pb-8">
+            <p class="text-5xl font-black text-white pb-2">騰紘科技</p>
+            <p class="text-2xl text-white">股份有限公司</p>
+          </div>
+          <div class="w-full lg:w-1/3 lg:pr-5 pb-8">
+            <p class="text-2xl pb-2 text-th-green">公司資訊</p>
+            <ul class="list-inside">
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="#"><i class="pr-2 text-base/0 fi fi-rr-marker"></i>330 桃園市桃園區昆明路115巷13號</a>
+              </li>
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="#"><i class="pr-2 text-base/0 fi fi-rr-phone-rotary"></i>(03)3633911</a>
+              </li>
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="#"><i class="pr-2 text-base/0 fi fi-rr-fax"></i>(03)2166572</a>
+              </li>
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="mailto:tenghong@tenghong.com.tw"><i class="pr-2 text-base/0 fi fi-rr-at"></i>tenghong@tenghong.com.tw</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-1/3">
+            <p class="text-2xl pb-2 text-th-green">服務項目</p>
+            <ul class="list-inside">
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">高低壓電力系統工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">水電系統工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">消防系統工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">生產製程管路配管工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">LED照明設備客制生產 / 系統安裝規劃施工</a></li>
+              <li class="text-white flex items-center has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">太陽能系統安裝規劃施工</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="w-full px-3 lg:px-15 bg-th-green">
+        <div class="container mx-auto text-gray-800 text-sm text-center py-1">
+          <p>© 2025 騰紘科技股份有限公司. Designed by OZCHAMP</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- alpine.js -->
+    <script src="js/alpinejs3.12.3.js"></script>
+    <!-- jquery.js -->
+    <script src="js/jquery.js"></script>
+    <!-- main -->
+    <script src="js/main.js"></script>
+    <!-- Swiper -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1.5,
+        autoplay: {
+          delay: 2000
+        },
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        }
+      })
+    </script>
+    <!-- aos -->
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init()
+    </script>
+    <!-- Back to top -->
+    <script src="js/top.js"></script>
+  </body>
+</html>

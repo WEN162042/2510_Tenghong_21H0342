@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>騰紘科技</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link type="image/png" href="img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" />
+    <link type="image/png" href="img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" />
+    <link type="image/x-icon" href="img/favicon/favicon.ico" rel="icon" sizes="16x16" />
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/oz-tailwind.css" />
+    <link rel="stylesheet" href="css/oz-style.css" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- aos -->
+    <link rel="stylesheet" href="css/aos.css" />
+  </head>
+  <body>
+    <div id="preloader" class="preloader fixed z-50 left-0 top-0 right-0 bottom-0 bg-white flex justify-center items-center">
+      <div class="loader"></div>
+    </div>
+    <header class="w-full top-0 left-0 z-50 py-2 px-3 lg:px-15 bg-white lg:bg-transparent">
+      <div class="container mx-auto relative flex justify-between items-center w-full h-full" x-data="{ showMenu: false } ">
+        <a class="logo block text-center w-40" href="index.html"><img src="img/logo.png" alt="騰紘科技" /></a>
+
+        <!-- 下拉選單 -->
+        <div @click="showMenu = !showMenu" class="block text-white bg-th-green hover:brightness-90 cursor-pointer lg:hidden order-last rounded-sm">
+          <span class="flex items-center justify-center w-10 h-10 text-2xl"><i class="bi bi-list-ul"></i></span>
+        </div>
+
+        <!-- NavBar -->
+        <div class="justify-center items-start lg:items-center hidden w-full h-auto lg:relative lg:flex" :class="{'flex absolute z-50 left-0 top-[67px] bg-white/90 backdrop-blur-lg shadow-xl shadow-gray-500/20': showMenu, 'hidden': !showMenu }">
+          <nav class="flex flex-col justify-center lg:justify-end items-start lg:items-center w-full lg:flex-row justify-items-stretch sm:justity-center sm:items-center">
+            <ul class="nav w-full flex flex-wrap tracking-wider lg:justify-end lg:items-center lg:space-x-3 lg:p-0 px-4 pb-4">
+              <li class="relative lg:w-auto w-full">
+                <a href="index.html#aboutUs" class="block p-3 hover:text-th-green">公司簡介</a>
+              </li>
+              <li class="relative lg:w-auto w-full">
+                <a href="service.html" class="block p-3 hover:text-th-green">服務項目</a>
+              </li>
+              <li class="relative lg:w-auto w-full" @click.away="open = false" x-data="{ open: false }">
+                <a href="javascript:void(0)" @click="open = !open" class="block p-3 hover:text-th-green">
+                  <span>其他類別產業</span>
+                  <i class="bi bi-chevron-down inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 rotate-0" :class="{'rotate-180': open, 'rotate-0': !open}"></i>
+                </a>
+                <div class="lg:absolute relative lg:top-full lg:-left-12 w-full lg:mt-4 rounded lg:shadow-lg lg:w-65 z-20" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" style="display: none">
+                  <ul class="sub w-full p-2 bg-th-green text-white lg:rounded">
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-01.html"><i class="bi bi-dot"></i>電子資訊光電生物科技產業</a>
+                    </li>
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-02.html"><i class="bi bi-dot"></i> 醫療 / 照護服務產業</a>
+                    </li>
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-03.html"><i class="bi bi-dot"></i>太陽能發電 / LED照明產業</a>
+                    </li>
+                    <li>
+                      <a class="block p-3 hover:opacity-100 opacity-80" href="service-04.html"><i class="bi bi-dot"></i>公共工程</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="relative lg:w-auto w-full">
+                <a href="products.html" class="block p-3 hover:text-th-green">產品介紹</a>
+              </li>
+              <li class="relative lg:w-auto w-full">
+                <a href="contact.html" class="block p-3 hover:text-th-green">聯絡我們</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="-z-1 w-full mt-20 lg:mt-0 relative">
+        <div class="container mx-auto relative lg:h-150 flex items-center lg:px-15">
+          <picture class="-z-1 absolute -bottom-90 lg:-bottom-130 -left-20 lg:-left-25">
+            <img class="w-100 lg:w-190 h-auto opacity-30" src="img/gallery-1.svg" alt="" />
+          </picture>
+          <div class="z-1 absolute inset-0 flex flex-col items-center justify-center text-center lg:static lg:inset-auto lg:w-1/2 lg:items-start lg:justify-center lg:text-left">
+            <h1 class="text-white text-shadow-sm lg:text-shadow-none lg:text-gray-800 text-5xl md:text-8xl text-center lg:text-start pb-2 md:pb-5">騰紘科技</h1>
+            <h2 class="text-white text-shadow-sm lg:text-shadow-none lg:text-gray-800 text-xl md:text-3xl text-center lg:text-start pb-5">專業整合工程，打造永續價值</h2>
+            <p class="text-gray-500 text-shadow-xs/100 text-shadow-white hidden lg:block">自2000年成立以來，騰紘科技以專業的水電、消防、空調與監控系統整合工程，完成多項國內外重要建設。從規劃設計到施工維護，提供全方位一站式服務，秉持品質、安全與效率的承諾，成為客戶值得信賴的工程夥伴。</p>
+          </div>
+          <div>
+            <div class="w-full lg:hidden">
+              <img src="img/132079110_m.jpg" alt="" />
+            </div>
+            <div class="absolute -top-13 lg:-top-50 -right-45 lg:-right-11 hidden lg:block">
+              <svg class="md:w-140 lg:w-200 md:h-140 lg:h-200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="shapeClip">
+                    <path
+                      d="M120 14.2857C120 6.39593 113.604 0 105.714 0H94.2857C86.3959 0 80 6.39594 80 14.2857V17.2269C80 29.9541 64.6123 36.3279 55.6128 27.3284L53.533 25.2487C47.9541 19.6698 38.9089 19.6698 33.3299 25.2487L25.2487 33.3299C19.6698 38.9088 19.6698 47.954 25.2487 53.533L27.3285 55.6128C36.328 64.6123 29.9542 80 17.227 80H14.2857C6.39593 80 0 86.3959 0 94.2857V105.714C0 113.604 6.39593 120 14.2857 120H17.2269C29.9542 120 36.328 135.388 27.3285 144.387L25.2487 146.467C19.6698 152.046 19.6698 161.091 25.2487 166.67L33.3299 174.751C38.9089 180.33 47.9541 180.33 53.533 174.751L55.6128 172.671C64.6122 163.672 80 170.046 80 182.773V185.714C80 193.604 86.3959 200 94.2857 200H105.714C113.604 200 120 193.604 120 185.714V182.773C120 170.046 135.388 163.672 144.387 172.671L146.467 174.751C152.046 180.33 161.091 180.33 166.67 174.751L174.751 166.67C180.33 161.091 180.33 152.046 174.751 146.467L172.672 144.387C163.672 135.388 170.046 120 182.773 120H185.714C193.604 120 200 113.604 200 105.714V94.2857C200 86.3959 193.604 80 185.714 80H182.773C170.046 80 163.672 64.6123 172.671 55.6128L174.751 53.5329C180.33 47.954 180.33 38.9088 174.751 33.3299L166.67 25.2487C161.091 19.6697 152.046 19.6697 146.467 25.2487L144.387 27.3284C135.388 36.3279 120 29.9541 120 17.2269V14.2857Z" />
+                  </clipPath>
+                </defs>
+
+                <image href="img/132079110_m.jpg" width="200" height="200" clip-path="url(#shapeClip)" preserveAspectRatio="xMaxYMid slice" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="aboutUs" class="w-full px-3 lg:px-15 mt-10 md:mt-20">
+        <div class="relative container mx-auto flex flex-wrap">
+          <picture class="absolute top-10 right-0" data-aos="fade-left">
+            <img class="w-50 h-auto opacity-30" src="img/gallery-4.svg" alt="" />
+          </picture>
+          <div class="w-full mb-10">
+            <p class="text-lg text-th-orange pb-2 text-center">About Us</p>
+            <h2 class="text-5xl text-th-green text-pretty text-center">公司簡介</h2>
+          </div>
+          <ul class="w-full flex flex-wrap items-stretch">
+            <li class="w-full md:w-1/3 md:pr-5 mb-5 text-white flex group" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <div class="w-full flex items-center pb-5">
+                  <span><i class="text-th-orange text-5xl pr-5 i fi-rr-corporate-alt group-hover:text-gray-800"></i></span>
+                  <span class="text-2xl">成立背景與專業資質</span>
+                </div>
+                <div class="w-full flex">
+                  <div class="w-1 bg-th-green mr-5 group-hover:bg-gray-800"></div>
+                  <div class="w-full">騰紘科技成立於2000年，為政府立案合格電氣甲種承裝業及電氣工程公會會員，專精水電、消防、空調、監控與節能系統的設計、安裝、施工與維護。</div>
+                </div>
+              </div>
+            </li>
+            <li class="w-full md:w-1/3 md:pr-5 mb-5 text-white flex group" data-aos="flip-left" data-aos-delay="500" data-aos-duration="1000">
+              <div class="flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <div class="w-full flex items-center pb-5">
+                  <span><i class="text-th-orange text-5xl pr-5 fi fi-rr-shield-trust group-hover:text-gray-800"></i></span>
+                  <span class="text-2xl">豐富工程實績</span>
+                </div>
+                <div class="w-full flex">
+                  <div class="w-1 bg-th-green mr-5 group-hover:bg-gray-800"></div>
+                  <div class="w-full">騰紘完成多項工程，包括上市櫃廠房、高科技廠房、醫療體系、機場、學校及觀光景點等，並以專業團隊與完善售後服務獲得客戶高度肯定。</div>
+                </div>
+              </div>
+            </li>
+            <li class="w-full md:w-1/3 mb-5 text-white flex group" data-aos="flip-left" data-aos-delay="700" data-aos-duration="1000">
+              <div class="flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <div class="w-full flex items-center pb-5">
+                  <span><i class="text-th-orange text-5xl pr-5 fi fi-rr-globe group-hover:text-gray-800"></i></span>
+                  <span class="text-2xl">國際化整合工程服務</span>
+                </div>
+                <div class="w-full flex">
+                  <div class="w-1 bg-th-green mr-5 group-hover:bg-gray-800"></div>
+                  <div class="w-full">2008年，騰紘成立泰國分公司，拓展國際市場。公司提供規劃、設計、採購、施工、維護及保固等整體工程服務，秉持專業與責任施工，確保工程安全、品質、效率與節能。</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="w-full px-3 lg:px-15 mt-10 md:mt-20 bg-gray-800/50 bg-center bg-fixed bg-blend-multiply bg-no-repeat bg-cover" style="background-image: url(img/03.jpg)">
+        <div class="container mx-auto py-20 flex flex-wrap">
+          <div class="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center mb-10">
+            <p class="text-lg text-th-orange pb-2">Services Projects</p>
+            <h2 class="text-5xl text-white text-pretty pb-10">服務項目</h2>
+            <a class="p-3 bg-gray-800 text-white rounded-sm transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-gray-800" href="service.html">查看更多 <i class="bi bi-arrow-up-right-circle"></i></a>
+          </div>
+          <ul class="w-full md:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-5 items-stretch">
+            <li class="text-white flex group w-full" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="w-full flex flex-wrap p-5 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <span class="w-full text-center pb-3"><i class="text-th-orange text-2xl fi fi-rr-tools group-hover:text-gray-800"></i></span>
+                <span class="w-full text-center">高低壓電力系統工程</span>
+              </div>
+            </li>
+            <li class="text-white flex group w-full" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="w-full flex flex-wrap p-5 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <span class="w-full text-center pb-3"><i class="text-th-orange text-2xl fi fi-rr-tools group-hover:text-gray-800"></i></span>
+                <span class="w-full text-center">水電系統工程</span>
+              </div>
+            </li>
+            <li class="text-white flex group w-full" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="w-full flex flex-wrap p-5 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <span class="w-full text-center pb-3"><i class="text-th-orange text-2xl fi fi-rr-tools group-hover:text-gray-800"></i></span>
+                <span class="w-full text-center">消防系統工程</span>
+              </div>
+            </li>
+            <li class="text-white flex group w-full" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="w-full flex flex-wrap p-5 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <span class="w-full text-center pb-3"><i class="text-th-orange text-2xl fi fi-rr-tools group-hover:text-gray-800"></i></span>
+                <span class="w-full text-center">生產製程管路配管工程</span>
+              </div>
+            </li>
+            <li class="text-white flex group w-full" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="w-full flex flex-wrap p-5 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <span class="w-full text-center pb-3"><i class="text-th-orange text-2xl fi fi-rr-tools group-hover:text-gray-800"></i></span>
+                <span class="w-full text-center">LED照明設備客制生產<br />系統安裝規劃施工</span>
+              </div>
+            </li>
+            <li class="text-white flex group w-full" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="w-full flex flex-wrap p-5 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-orange">
+                <span class="w-full text-center pb-3"><i class="text-th-orange text-2xl fi fi-rr-tools group-hover:text-gray-800"></i></span>
+                <span class="w-full text-center">太陽能系統安裝規劃施工</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="w-full px-3 lg:px-15 mt-10 md:mt-20">
+        <div class="container relative mx-auto overflow-x-hidden">
+          <div class="z-1 absolute left-1/2 top-1/2 translate-y-[-50%] translate-x-[-50%] w-50 h-50 rounded-full bg-th-orange"></div>
+          <div class="z-2 absolute left-1/2 top-1/2 translate-y-[-50%] translate-x-[-50%] w-40 h-40 rounded-full bg-white shadow-xl/50 shadow-orange-600">
+            <div class="h-full flex flex-col justify-center items-center pb-3">
+              <div class="text-lg text-th-orange">Company</div>
+              <div class="text-3xl text-th-green">公司檔案</div>
+            </div>
+          </div>
+          <ul class="w-full flex flex-wrap items-stretch">
+            <li class="w-full md:w-1/2 pb-20 md:pb-0 md:pr-20 text-white flex group" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+              <div class="flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-green">
+                <div class="w-full flex items-center justify-center pb-5">
+                  <span><i class="text-th-orange text-5xl pr-5 i fi-rr-corporate-alt group-hover:text-gray-800"></i></span>
+                  <span class="text-2xl">台灣總公司</span>
+                </div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 騰紘科技股份有限公司</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 創立於2000年</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 公司地址：330 桃園市桃園區中正路1088號9F</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 服務專線：(03)3633911</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 業務傳真：(03)2166572</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 統一編號：70513571</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 資本額：新台幣五千萬元整</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 電子信箱：tenghong@tenghong.com.tw</div>
+              </div>
+            </li>
+            <li class="w-full md:w-1/2 pt-20 md:pt-0 md:pl-20 text-white flex group" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
+              <div class="flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out group-hover:bg-th-green">
+                <div class="w-full flex items-center justify-center pb-5">
+                  <span><i class="text-th-orange text-5xl pr-5 i fi-rr-corporate-alt group-hover:text-gray-800"></i></span>
+                  <span class="text-2xl">泰國分公司</span>
+                </div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> 桓通電子工業集團</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> Frontier Electronics Industry Co.,Ltd</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> Address：泰國曼谷市那加達大道匯廣Forum Tower大樓12F,184/29 Forum Tower 12F,Rachadaphisek Rd.,Huaykwang, Bangkok 10310 Thailand</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> TEL：+66-2-645-3668</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> FAX：+66-2-645-3667</div>
+                <hr class="w-full my-3" />
+                <div class="w-full"><i class="bi bi-chevron-double-right"></i> EMAIL：front668@truemail.co.th</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="w-full bg-gray-100 py-20 px-3 lg:px-15 mt-10 md:mt-20">
+        <div class="relative container mx-auto flex flex-wrap overflow-x-hidden">
+          <div class="w-full lg:w-1/3 lg:pr-3 flex flex-col items-center md:items-start justify-center mb-10" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+            <p class="text-lg text-th-orange pb-2">Brand Strategy ＆ Objectives</p>
+            <h2 class="text-5xl text-th-green text-pretty pb-5">品牌策略及目標</h2>
+            <p class="text-base text-gray-500 text-pretty">騰紘科技完成多項廠房與公共工程實績，以專業、安全與效率為核心，為客戶打造值得信賴的工程成果。</p>
+          </div>
+
+          <div class="w-full lg:w-2/3 lg:pl-3 text-white flex flex-wrap">
+            <div class="group w-full flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out hover:bg-th-orange mb-5" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+              <div class="w-full flex items-center pb-5">
+                <span><i class="text-th-orange text-5xl pr-5 fi fi-rr-shield-trust group-hover:text-gray-800"></i></span>
+                <span class="text-2xl">品質策略</span>
+              </div>
+              <ul class="w-full space-y-2 text-sm list-disc list-outside pl-5">
+                <li>市場競爭日趨激烈中，以高品質為目標並以優秀的專業實力，與用心服務的工作態度，實踐「專業、創新、服務」之目標。</li>
+                <li>「顧客滿意是騰紘追求品質的終極目標」，可使各單位落實執行「強化施工技、提供優良品質、滿足客戶期望」的品質政策，透過流程合理化、作業標準化、文件制度化的建立，達到交期準時、降低成本的品質目標。達到優良的施工品質及完善的售後服務效率，我們朝此方向努力並加強各項管理以求降低成本回饋客戶。</li>
+              </ul>
+            </div>
+            <div class="group w-full flex flex-wrap p-10 bg-gray-800 rounded-sm transition delay-150 duration-300 ease-in-out hover:bg-th-orange relative overflow-hidden" data-aos="fade-left" data-aos-delay="700" data-aos-duration="1000">
+              <picture class="-z-1 absolute -bottom-30 -right-5 hidden md:block">
+                <img class="w-120 opacity-30" src="img/gallery-3.svg" alt="" />
+              </picture>
+              <div class="w-full flex items-center pb-5">
+                <span><i class="text-th-orange text-5xl pr-5 fi fi-rr-shield-trust group-hover:text-gray-800"></i></span>
+                <span class="text-2xl">品質目標</span>
+              </div>
+              <ul class="w-full space-y-2 text-sm list-disc list-outside pl-5">
+                <li>配合客戶需求盡力達成目標。</li>
+                <li>專業達到業界標準水平以上。</li>
+                <li>施工維修保固服務保證。</li>
+                <li>注重客戶滿意度反應回覆。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full px-3 lg:px-15 my-10 md:my-20">
+        <div class="container mx-auto flex flex-wrap overflow-x-hidden">
+          <div class="w-full lg:w-1/3 flex flex-col mb-10 text-center lg:text-start">
+            <p class="text-lg text-th-orange pb-2">Team Introduction</p>
+            <h2 class="text-5xl text-th-green text-pretty pb-5">團隊介紹</h2>
+            <p class="text-base text-gray-500 whitespace-normal xl:whitespace-nowrap">本公司由主持人、專業團隊及專案工程人員專責規劃與設計施工，分層負責，執行組織圖。</p>
+          </div>
+
+          <img class="w-full lg:w-130 mx-auto" src="img/team.png" alt="" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <button id="scroll" class="cursor-pointer w-full mx-auto py-2 bg-gray-200 text-gray-800 hover:text-th-green"><i class="text-3xl font-black fi fi-rr-angle-up"></i></button>
+      <div class="w-full px-3 lg:px-15 bg-gray-800">
+        <div class="container mx-auto flex flex-wrap py-16">
+          <div class="w-full mx-auto lg:w-1/3 lg:pr-5 pb-8">
+            <p class="text-5xl font-black text-white pb-2">騰紘科技</p>
+            <p class="text-2xl text-white">股份有限公司</p>
+          </div>
+          <div class="w-full lg:w-1/3 lg:pr-5 pb-8">
+            <p class="text-2xl pb-2 text-th-green">公司資訊</p>
+            <ul class="list-inside">
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="#"><i class="pr-2 text-base/0 fi fi-rr-marker"></i>330 桃園市桃園區昆明路115巷13號</a>
+              </li>
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="#"><i class="pr-2 text-base/0 fi fi-rr-phone-rotary"></i>(03)3633911</a>
+              </li>
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="#"><i class="pr-2 text-base/0 fi fi-rr-fax"></i>(03)2166572</a>
+              </li>
+              <li class="text-pretty text-white flex items-center pb-1 hover:text-th-orange">
+                <a href="mailto:tenghong@tenghong.com.tw"><i class="pr-2 text-base/0 fi fi-rr-at"></i>tenghong@tenghong.com.tw</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-1/3">
+            <p class="text-2xl pb-2 text-th-green">服務項目</p>
+            <ul class="list-inside">
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">高低壓電力系統工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">水電系統工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">消防系統工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">生產製程管路配管工程</a></li>
+              <li class="text-white flex items-center pb-1 has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">LED照明設備客制生產 / 系統安裝規劃施工</a></li>
+              <li class="text-white flex items-center has-hover:text-th-orange"><i class="pr-2 text-base/0 bi bi-chevron-double-right"></i><a href="service.html">太陽能系統安裝規劃施工</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="w-full px-3 lg:px-15 bg-th-green">
+        <div class="container mx-auto text-gray-800 text-sm text-center py-1">
+          <p>© 2025 騰紘科技股份有限公司. Designed by OZCHAMP</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- alpine.js -->
+    <script src="js/alpinejs3.12.3.js"></script>
+    <!-- jquery.js -->
+    <script src="js/jquery.js"></script>
+    <!-- main -->
+    <script src="js/main.js"></script>
+    <!-- Swiper -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1.5,
+        autoplay: {
+          delay: 2000
+        },
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        }
+      })
+    </script>
+    <!-- aos -->
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init()
+    </script>
+    <!-- Back to top -->
+    <script src="js/top.js"></script>
+  </body>
+</html>

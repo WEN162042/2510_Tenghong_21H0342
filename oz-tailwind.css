@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-th-green: #8cad37;
+  --color-th-orange: #fb9702;
+
+  --font-monoton: "Monoton", sans-serif;
+
+  --shadow-th: 3px 4px 5px rgba(0, 0, 0, 0.2);
+}
